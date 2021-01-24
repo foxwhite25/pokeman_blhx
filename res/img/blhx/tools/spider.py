@@ -4,7 +4,7 @@ from urllib import request
 import os
 import sqlite3
 
-os.chdir(r'C:\Users\vctxi\Desktop\blhx')
+os.chdir(r'输入你的目录')
 url = 'https://wiki.biligame.com/blhx/%E8%88%B0%E5%A8%98%E5%9B%BE%E9%89%B4'
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 '
@@ -60,7 +60,7 @@ def get_data(url):
         if stlevel == "超稀有" or stlevel == "海上传奇" or stlevel == "最高方案" or stlevel == "决战方案":
             stl = 6
         realname = "icon_unit_" + str(stid) + str(stl) + "1" + ".png"
-        #  request.urlretrieve(jpg[0], realname)  # 转换成图片
+        request.urlretrieve(jpg[0], realname)  # 转换成图片
     except:
         pass
 

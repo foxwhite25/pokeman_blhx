@@ -17,7 +17,7 @@ DIR_PATH = os.path.join(os.path.expanduser(
     hoshino.config.RES_DIR), 'img', 'blhx', 'unit')
 DB_PATH = os.path.expanduser("~/.hoshino/poke_man_blhx.db")
 POKE_GET_CARDS = 1  # 每一戳的卡片掉落几率
-POKE_DAILY_LIMIT = 10  # 机器人每天掉落卡片的次数
+POKE_DAILY_LIMIT = 3  # 机器人每天掉落卡片的次数
 RARE_PROBABILITY = 0.08  # 戳一戳获得稀有卡片的概率
 SUPER_RARE_PROBABILITY = 0.015  # 戳一戳获得超稀有卡片的概率
 REQUEST_VALID_TIME = 60  # 换卡请求的等待时间
@@ -25,7 +25,7 @@ POKE_TIP_LIMIT = 1  # 到达每日掉落上限后的短时最多提示次数
 TIP_CD_LIMIT = 10 * 60  # 每日掉落上限提示冷却时间
 POKE_COOLING_TIME = 0  # 增加冷却时间避免连续点击
 GIVE_DAILY_LIMIT = 3  # 每人每天最多接受几次赠卡
-RESET_HOUR = 6  # 每日戳一戳、赠送等指令使用次数的重置时间，0代表凌晨0点，1代表凌晨1点，以此类推
+RESET_HOUR = 0  # 每日戳一戳、赠送等指令使用次数的重置时间，0代表凌晨0点，1代表凌晨1点，以此类推
 COL_NUM = 17  # 查看仓库时每行显示的卡片个数
 OMIT_THRESHOLD = 20  # 当获得卡片数超过这个阈值时，不再显示获得卡片的具体名称，只显示获得的各个稀有度的卡片数目
 # 填写不希望被加载的卡片文件名，以逗号分隔。如['icon_unit_100161.png'], 表示不加载六星猫拳的头像
@@ -44,13 +44,7 @@ OK_MIX_PROBABILITY = {str(list((-1, -1))): [0.846, 0.15, 0.004], str(list((-1, 0
 PRELOAD = True  # 是否启动时直接将所有图片加载到内存中以提高查看仓库的速度(增加约几M内存消耗)
 
 sv = Service('poke-man-blhx', bundle='pcr娱乐', help_='''
-戳一戳机器人, 她可能会送你公主连结卡片哦~
-查看仓库 [@某人](这是可选参数): 查看某人的卡片仓库和收集度排名，不加参数默认查看自己的仓库
-合成 [卡片1昵称] [卡片2昵称]: 献祭两张卡片以获得一张新的卡片
-一键合成 [稀有度1] [稀有度2] [合成轮数](这是可选参数,不填则合成尽可能多的轮数): 一键进行若干轮"稀有度1"和"稀有度2"的卡片合成。注意: 使用一键合成指令获得稀有或超稀有卡的几率略低于使用合成指令
-赠送 [@某人] [赠送的卡片名]: 将自己的卡片赠予别人
-交换 [卡片1昵称] [@某人] [卡片2昵称]: 向某人发起卡片交换请求，用自己的卡片1交换他的卡片2
-确认交换: 收到换卡请求后一定时间内输入这个指令可完成换卡
+在做了在做了，呜呜呜
 '''.strip())
 poke_tip_cd_limiter = FreqLimiter(TIP_CD_LIMIT)
 daily_tip_limiter = DailyAmountLimiter("tip", POKE_TIP_LIMIT, RESET_HOUR)

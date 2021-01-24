@@ -153,7 +153,7 @@ class Chara:
             res = R.img(f'priconne/unit/icon_unit_{self.id}31.png')
         if not res.exist:
             res = R.img(f'priconne/unit/icon_unit_{self.id}11.png')
-        if not res.exist:  
+        if not res.exist:
             download_chara_icon(self.id, 6)
             download_chara_icon(self.id, 3)
             download_chara_icon(self.id, 1)
