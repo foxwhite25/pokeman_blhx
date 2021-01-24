@@ -83,7 +83,7 @@
    ```sh
    git clone https://github.com/foxwhite25/pokeman_blhx.git
    ```
-2. 移动到Plugins文件夹
+2. 移动到modules文件夹
 3. 安装必要的Python库
 4. 修改你要修改的东西(_bot.py etc)
 
